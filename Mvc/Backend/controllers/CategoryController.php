@@ -65,7 +65,7 @@ class CategoryController extends Controller{
                 exit();
             }
         }
-       $list_tree=$this->data_tree($categories);
+    //    $list_tree=$this->data_tree($categories);
         $this->content=$this->render('Mvc/Backend/views/categories/create.php');
         require_once 'Mvc/Backend/views/layouts/main.php';
     }
