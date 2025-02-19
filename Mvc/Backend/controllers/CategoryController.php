@@ -69,19 +69,19 @@ class CategoryController extends Controller{
         $this->content=$this->render('Mvc/Backend/views/categories/create.php');
         require_once 'Mvc/Backend/views/layouts/main.php';
     }
-    public function detail(){
-        if(!isset($_GET['id']) || !is_numeric($_GET["id"])) {
-            $_SESSION['error'] = "Id không hợp lệ";
-            header('location:index.php?area=backend&controller=category');
-            exit();
-        }
-            $id=$_GET["id"];
-            $category_model=new Category();
-            $categories=$category_model->getAll();
-            $category=$category_model->getCategoryById($id);
-            $this->content=$this->render('Mvc/Backend/views/categories/detail.php',['category' => $category]);
-            require_once 'Mvc/Backend/views/layouts/main.php';
-    }
+    // public function detail(){
+    //     if(!isset($_GET['id']) || !is_numeric($_GET["id"])) {
+    //         $_SESSION['error'] = "Id không hợp lệ";
+    //         header('location:index.php?area=backend&controller=category');
+    //         exit();
+    //     }
+    //         $id=$_GET["id"];
+    //         $category_model=new Category();
+    //         $categories=$category_model->getAll();
+    //         $category=$category_model->getCategoryById($id);
+    //         $this->content=$this->render('Mvc/Backend/views/categories/detail.php',['category' => $category]);
+    //         require_once 'Mvc/Backend/views/layouts/main.php';
+    // }
     public function update(){
         if(!isset($_GET["id"]) || !is_numeric($_GET["id"])){
             $_SESSION['error'] = "Id không hợp lệ";
